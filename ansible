@@ -1,0 +1,13 @@
+---
+- name: installing webserver
+  hosts: localhost or webserver#
+  tasks:
+    - name: installing webserver
+      yum: name = nginx state = present
+
+    - name: starting the httpd service
+      service: name = httpd state:started
+
+  # Before executing this playbook we need register the target server ips in inventory file.
+  # then run the ansible-playbook -i inventory playbook.yaml
+  # to create rool in ansible run the command like ansible-galaxy init roolname(like dev or prod or prepod)
